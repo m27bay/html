@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Conteneur sans flex</h2>
+    <div class="container">
+        <div class="cont-item">ELEMENT1</div>
+        <div class="cont-item">ELEMENT2</div>
+        <div class="cont-item">ELEMENT3</div>
+        <div class="cont-item">ELEMENT4</div>
+        <div class="cont-item">ELEMENT5</div>
+        <div class="cont-item">ELEMENT6</div>
+    </div>
+    
+    <h2>Conteneur avec flex</h2>
+    <div class="containerFlex">
+        <div class="cont-item">ELEMENT1</div>
+        <div class="cont-item">ELEMENT2</div>
+        <div class="cont-item">ELEMENT3</div>
+        <div class="cont-item">ELEMENT4</div>
+        <div class="cont-item">ELEMENT5</div>
+        <div class="cont-item">ELEMENT6</div>
+    </div>
+    
+    <h2>flex-grow, même taille</h2>
+    <div class="containerFlex">
+        <div class="cont-item flex-grow-egal">ELEMENT1</div>
+        <div class="cont-item flex-grow-egal">ELEMENT2</div>
+        <div class="cont-item flex-grow-egal">ELEMENT3</div>
+    </div>
+    
+    <h2>flex-grow, ELEMENT2 > ELEMENT1, ELEMENT2 > ELEMENT3</h2>
+    <div class="containerFlex">
+        <div class="cont-item flex-grow-obj1">ELEMENT1</div>
+        <div class="cont-item flex-grow-obj2">ELEMENT2</div>
+        <div class="cont-item flex-grow-obj1">ELEMENT3</div>
+    </div>
+    
+    <h2>align-self</h2>
+    <div class="containerFlex2">
+        <div class="cont-item align-self-obj1">ELEMENT1</div>
+        <div class="cont-item align-self-obj2">ELEMENT2</div>
+        <div class="cont-item align-self-obj3">ELEMENT3</div>
+    </div>
+</body>
+</html>

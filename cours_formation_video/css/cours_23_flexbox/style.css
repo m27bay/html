@@ -1,0 +1,59 @@
+/*
+    On peut mettre 'auto' partout.
+
+    display:flex|inline-flex
+
+    flex-direction:row|column|row-reverser|column-reverse 
+    flex-wrap:nowrap|wrap|wrap-reverse -> coupure sur plusieurs lignes
+    flex-flow:<flex-direction> <flex-wrap>
+
+    flex-grow:<int> -> agrandissement de l'élément en fonction des autres
+    flex-shrink:<int> -> rétrécissement de l'élément en fonction des autres
+    flex-basis>:<int> -> taille initiale de l'élément
+    flex: <flex-grow> <flex-shrink> <flex-basis>
+
+    justify-content:flex-start|flex-end|center|space-between|space-around|space-evenly -> positionnement en x des items dans le conteneur
+    align-items:flex-start|flex-end|center|stretch|baseline -> s'applique sur le conteneur, positionnement en y des items dans le conteneur
+    align-self:flex-start|flex-end|center|stretch|baseline -> s'applique sur un élément, positionnement en y des items dans le conteneur
+
+    order:<int> -> priorité des éléments
+*/
+
+body
+{
+    background-color: #eee;
+    margin:auto;
+    width:100%;
+}
+
+.container, .containerFlex, .containerFlex2
+{
+    background-color: rgb(87, 62, 231);
+}
+
+.containerFlex, .containerFlex2
+{
+    display: flex;
+}
+
+.containerFlex2
+{
+    height: 100px;
+}
+
+.cont-item
+{
+    background-color: rgb(223, 90, 90);
+    border: 1px solid black;
+}
+
+/* Peut importe la valeur */
+.flex-grow-egal{flex-grow: 1;}
+
+/* Peut importe la valeur */
+.flex-grow-obj1{flex-grow: 3;}
+.flex-grow-obj2{flex-grow: 6;}
+
+.align-self-obj1{align-self: flex-start;}
+.align-self-obj2{align-self: flex-end;}
+.align-self-obj3{align-self: center;}
