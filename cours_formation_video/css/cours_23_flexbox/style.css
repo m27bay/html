@@ -12,9 +12,11 @@
     flex-basis>:<int> -> taille initiale de l'élément
     flex: <flex-grow> <flex-shrink> <flex-basis>
 
-    justify-content:flex-start|flex-end|center|space-between|space-around|space-evenly -> positionnement en x des items dans le conteneur
     align-items:flex-start|flex-end|center|stretch|baseline -> s'applique sur le conteneur, positionnement en y des items dans le conteneur
+    justify-content:flex-start|flex-end|center|space-between|space-around|space-evenly -> positionnement en x des items dans le conteneur
+    
     align-self:flex-start|flex-end|center|stretch|baseline -> s'applique sur un élément, positionnement en y des items dans le conteneur
+    justify-self:flex-start|flex-end|center|space-between|space-around|space-evenly -> positionnement en x des items dans le conteneur
 
     order:<int> -> priorité des éléments
 */
