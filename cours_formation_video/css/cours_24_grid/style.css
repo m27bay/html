@@ -1,0 +1,111 @@
+/*
+    CONTAINER : display: grid
+                grid-template-column: <int> ... -> int la taille de la colonne,
+                    on peut répéter x fois la taille pour avoir le nombre de colonne.
+                grid-template-rows: <int> -> Similaire mais pour les lignes.
+                grid-template-areas: [Voir exemple plus bas]
+                grid-template: <grid-template-column> / <grid-template-rows>
+
+                justify-content:start|end|center|stretch|space-between|space-around|space-evenly -> Positionnement en x des cellules
+                align-content:start|end|center|stretch|space-between|space-around|space-evenly -> Positionnement en y des cellules
+                place-content: <align-content> / <justify-content>
+        
+                justify-items:start|end|center|stretch|space-between|space-around|space-evenly -> Positionnement en x du contenue des cellules
+                align-items:start|end|center|stretch|space-between|space-around|space-evenly -> Positionnement en y du contenue des cellules
+                place-items: <align-items> / <justify-items>
+
+                grid-column-gap:<int> -> Espacement entre les colonnes
+                grid-row-gap:<int> -> Espacement entre les lignes
+                gap: <grid-column-gap> <grid-row-gap> 
+
+                grid-auto-columns: <int> -> Indiqué une taille pour les cellules non prise en charge
+                grid-auto-rows: <int> -> Similaire mais pour les lignes
+                grid-auto-flow:column|row -> Place les cellules non prise en charge en ligne ou en colonne derriere celle prise en charge
+                
+                grid
+
+    ITEM :  grid-column: <int> Change la colonne de l'objet concerné et décal les cellules qui suivent
+            grid-column:2 / 3 -> 2eme colonne sur 3
+            grid-column:1 / -1 -> Rempli complétement la ligne
+            grid-row: <int> Similaire mais pour la ligne
+
+            grid-area: <str> -> Créer une zone.
+
+            grid-column-start: <int> -> Indique dans quelle colonne commence la cellule
+            grid-row-start: <int> -> Similaire mais pour la ligne
+            grid-column-end: <int> -> Indique dans quelle colonne termine la cellule
+            grid-row-end: <int> -> Similaire mais pour la ligne
+            
+            justify-self:start|end|center|stretch|space-between|space-around|space-evenly -> Positionnement en x d'une seule élément
+            align-self:start|end|center|stretch|space-between|space-around|space-evenly -> Positionnement en y d'une seule élément
+            place-self;:<align-self> / <justify-self>
+*/
+
+body{background-color: #eee;}
+.container
+{
+    border: 2px dashed #aa5230;
+    height: 500px;
+    width: 800px;
+    display: grid;
+    
+    /* 3 colonnes, 2 lignes*/
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 150px 150px;
+
+    /*
+        Prend la place donné par le grid :
+        grid-template-columns: auto auto auto;
+
+        Simplification :
+        grid-template-columns: repeat(3, auto);
+
+        Les colonnes ont une taille borné
+        grid-template-columns: repeat(3, minmax(100px, 200px);
+
+        Repartition équitable de la place :
+        grid-template-columns: 1fr 1fr 1fr;
+
+        Prend la place minimale pour le contenue pour la 1ere colonne:
+        grid-template-columns: min-content 1fr 1fr;
+        VOIR AUSSI : max-content
+
+        Grid divisé en 4 (1+2+1), la 2eme colonne prend 2 fois plus de place :
+        grid-template-columns: 1fr 2fr 1fr;
+    */ 
+}
+.item
+{
+    border: 1px solid #221fb3;
+    background-color: #386ccc;
+    color: #fff;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+/* Creation des aires */
+header{grid-area: entete;}
+section{grid-area: principale;}
+aside{grid-area: lateral;}
+footer{grid-area: pied;}
+.container2
+{
+    border: 2px dashed #aa5230;
+    display: grid;
+
+    /*
+        Organisation des aires dans la grille
+        grille (2*3)
+    */
+    grid-template-areas:
+        "entete entete"
+        "principale lateral"
+        "pied pied";
+
+    /* Ajout d'un emplacement vide entre 'principale' et 'lateral' */
+    grid-template-areas:
+        "entete entete entete"
+        "principale . lateral"
+        "pied pied pied";
+}
+    
