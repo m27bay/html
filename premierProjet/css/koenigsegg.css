@@ -1,34 +1,48 @@
-body{ font-family: sans-serif; }
+body{
+    font-family: sans-serif;
+    margin: 50px;
+}
+h2, h3, #p-produc, table, header, footer{ text-align: center; }
 h2, .annee{ font-style: italic; }
 table{
     border-collapse: collapse;
     margin: 25px auto 25px auto;
-    text-align: center;
 }
-th,td{
-    border: 1px solid black;
-    padding: 5px;
-}
+th, td, .conteneur-principale, .item-principale{ border: 1px solid black; }
+th,td{ padding: 5px; }
 th{
     background-color:#CCC;
     font-weight: bold;
 }
 
+p.text{ text-align: justify; }
 .nom_voiture{ font-weight: bold; }
 
-header{grid-area: entete;}
-#intro{grid-area: intro;}
-#tab-produc{grid-area: tab-produc;}
-footer{grid-area: pied;}
+header{ grid-area: entete; }
+#intro{ grid-area: intro; }
+#tab-produc{ grid-area: tab-produc; }
+footer{ grid-area: pied; }
 
 .conteneur-principale{
     display: grid;
     grid-template-areas:
-        "entete entete"
-        "intro tab-produc"
-        "pied pied";
+        ". entete entete ."
+        ". intro tab-produc ."
+        ". pied pied .";
 }
+
+.item-principale{
+    margin: 10px;
+    padding: 10px;
+}
+
 .conteneur-secondaire{
     display: flex;
     align-items: center;
+}
+
+.item-secondaire{ margin: 5px; }
+
+.cadre{
+    border: 3px solid black;
 }
